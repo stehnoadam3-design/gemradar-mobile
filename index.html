@@ -14,7 +14,7 @@ header{height:82px;display:grid;grid-template-columns:1fr 48px 1fr;align-items:c
 .table-head{display:grid;grid-template-columns:minmax(0,1.35fr) .62fr .68fr .58fr 48px;gap:5px;padding:0 0 12px;border-bottom:1px solid #22242e;color:#a1a5b4;font-weight:650;font-size:12px}.table-head div:not(:first-child){text-align:right}
 .coin-list{display:flex;flex-direction:column}.coin{display:grid;grid-template-columns:minmax(0,1.35fr) .62fr .68fr .58fr 48px;gap:5px;align-items:center;min-height:93px;padding:12px 0;border-bottom:1px solid #151821;min-width:0}.coin-main{display:flex;gap:10px;align-items:center;min-width:0}.avatar{width:42px;height:42px;flex:0 0 42px;border-radius:13px;border:2px solid #27d99f;object-fit:cover;background:#111723;display:grid;place-items:center;font-size:18px;font-weight:850;color:#d2f8ed}.token-info{min-width:0}.symbol{font-weight:850;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px}.chain{color:#27c9d8;font-size:14px}.token-meta{font-size:11px;color:#969aaa;margin-top:4px;white-space:nowrap}.token-meta .speaker{font-size:10px}.metric{text-align:right;font-size:12px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:clip}.metric small{display:block;color:#999eae;font-size:11px;margin-top:4px;font-weight:650}.peak{color:var(--purple);font-size:11px}.peak .crown{font-size:10px;margin-right:1px}.spark-button{display:flex;align-items:center;justify-content:center;width:48px;height:38px;padding:0;border:0;border-radius:5px;overflow:hidden;color:#777d8e;font-size:12px}.spark{display:block;width:48px;height:36px;overflow:hidden}.spark-button:focus-visible{outline:2px solid var(--green);outline-offset:2px}.coin-main button{padding:0;border:0;text-align:left;min-width:0}.empty{padding:30px 12px;text-align:center;color:var(--muted)}.message{font-size:11px;color:#8e94a6;line-height:1.5;padding:15px 0}.status{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:11px}.dot{width:6px;height:6px;background:currentColor;border-radius:50%}.footer{color:#777d8e;font-size:10px;padding:10px 0 20px}
 .modal-backdrop{position:fixed;inset:0;z-index:10;background:#000b;display:none;align-items:flex-end;justify-content:center;padding:12px}.modal-backdrop.open{display:flex}.modal{width:min(100%,550px);max-height:88vh;overflow:auto;background:#11141d;border:1px solid #303443;border-radius:23px;padding:18px}.modal h2{font-size:20px;margin:0 0 5px}.modal p{color:#9da3b3;font-size:12px}.close{float:right}.field{margin:15px 0}.field label{display:block;color:#b7bdcc;font-size:12px;margin-bottom:7px}.field input,.field select{width:100%;background:#090c13;border:1px solid #343947;border-radius:11px;padding:12px;color:white}.modal-actions{display:flex;gap:8px}.modal-actions button{flex:1}.primary{background:#24d39d;color:#04130f;border:0;font-weight:850}.chart-modal{align-self:center;width:min(100%,720px)}.chart-controls{display:flex;gap:7px;margin-top:12px}.chart-controls button{padding:7px 13px;font-size:12px}.chart-controls button.active{color:#cbbaff;background:#28213f;border-color:#6d59a9}.chart-title{font-size:18px;font-weight:850}.sub{font-size:11px;color:#9ca2b3;margin-top:4px}
-@media(max-width:380px){.app{padding:0 10px}.stat-grid{gap:6px}.stat{padding:12px 4px;min-height:101px;border-radius:17px}.stat .label{font-size:11px}.stat .value{font-size:24px}.stat .foot{font-size:10px}.coin{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px}.table-head{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px;font-size:10px}.avatar{width:34px;height:34px;flex-basis:34px}.coin-main{gap:6px}.symbol{font-size:13px}.metric{font-size:10px}.metric small{font-size:9px}.spark-button{width:42px}.spark{width:42px}}
+.detail-modal{align-self:center;width:min(100%,760px);padding:17px}.detail-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding-right:28px}.detail-price{font-size:20px;font-weight:850;color:var(--green);white-space:nowrap}.detail-tabs{display:flex;gap:6px;overflow-x:auto;margin:16px 0 8px;padding-bottom:5px;scrollbar-width:none}.detail-tabs button{white-space:nowrap;font-size:12px;padding:8px 12px}.detail-tabs button.active{background:#242039;border-color:#8066c4;color:var(--purple)}.detail-panel{display:none}.detail-panel.active{display:block}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.detail-cell{background:#0b0e16;border:1px solid #222633;border-radius:13px;padding:12px;min-width:0}.detail-cell .k{color:#969cac;font-size:11px}.detail-cell .v{font-weight:800;font-size:16px;margin-top:5px;overflow-wrap:anywhere}.detail-note{color:#9ba1b1;font-size:12px;line-height:1.5;margin:14px 0 4px}.detail-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.detail-links a{display:inline-block;color:#a9dfff;border:1px solid #343947;border-radius:11px;padding:9px 11px;text-decoration:none;font-size:12px}.detail-links a:focus-visible{outline:2px solid var(--green)}@media(max-width:420px){.detail-modal{padding:13px}.detail-price{font-size:17px}.detail-grid{gap:7px}.detail-cell{padding:10px}.detail-cell .v{font-size:14px}}\n@media(max-width:380px){.app{padding:0 10px}.stat-grid{gap:6px}.stat{padding:12px 4px;min-height:101px;border-radius:17px}.stat .label{font-size:11px}.stat .value{font-size:24px}.stat .foot{font-size:10px}.coin{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px}.table-head{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px;font-size:10px}.avatar{width:34px;height:34px;flex-basis:34px}.coin-main{gap:6px}.symbol{font-size:13px}.metric{font-size:10px}.metric small{font-size:9px}.spark-button{width:42px}.spark{width:42px}}
 </style>
 </head>
 <body><main class="app">
@@ -44,7 +44,17 @@ header{height:82px;display:grid;grid-template-columns:1fr 48px 1fr;align-items:c
 <div class="field"><label for="poll">Refresh interval</label><select id="poll"><option value="30">30 seconds</option><option value="60" selected>60 seconds</option><option value="120">2 minutes</option><option value="300">5 minutes</option></select></div>
 <div class="field"><label><input id="browserAlerts" type="checkbox" style="width:auto;margin-right:7px"> Browser notifications while app is open</label></div>
 <div class="modal-actions"><button id="resetSettings">Reset</button><button class="primary" id="saveSettings">Save settings</button></div></div></div>
-<div class="modal-backdrop" id="chartModal"><div class="modal chart-modal"><button class="close" id="closeChart">✕</button><div class="chart-title" id="chartTitle">Token chart</div><div class="sub" id="chartSub">Loading chart data…</div><div class="chart-controls" id="chartControls"><button data-tf="minute" class="active">1m</button><button data-tf="hour">1h</button><button data-tf="day">1d</button></div><div id="priceChart" style="height:310px;width:100%;margin-top:10px"></div><div id="chartNote" class="sub" style="margin-top:8px"></div></div></div>
+<div class="modal-backdrop" id="chartModal"><div class="modal chart-modal detail-modal">
+<button class="close" id="closeChart" aria-label="Close token details">✕</button>
+<div class="detail-head"><div><div class="chart-title" id="chartTitle">Token details</div><div class="sub" id="chartSub">Loading public market data…</div></div><div class="detail-price" id="detailPrice">—</div></div>
+<div class="detail-tabs" id="detailTabs"><button class="active" data-tab="chart">Chart</button><button data-tab="overview">Overview</button><button data-tab="activity">Activity</button><button data-tab="holders">Holders</button><button data-tab="safety">Safety</button></div>
+<section class="detail-panel active" data-panel="chart"><div class="chart-controls" id="chartControls"><button data-tf="minute" class="active">1m</button><button data-tf="hour">1h</button><button data-tf="day">1d</button></div><div id="priceChart" style="height:310px;width:100%;margin-top:10px"></div><div id="chartNote" class="sub" style="margin-top:8px"></div></section>
+<section class="detail-panel" data-panel="overview"><div class="detail-grid" id="overviewGrid"></div><div class="detail-note">Metrics come from public market-data providers and can be delayed.</div></section>
+<section class="detail-panel" data-panel="activity"><div class="detail-grid" id="activityGrid"></div><div class="detail-note">Public pair data provides aggregated transactions, not a complete live trade tape.</div></section>
+<section class="detail-panel" data-panel="holders"><div class="detail-note" id="holdersNote">Holder analytics will appear only when a public source provides them.</div></section>
+<section class="detail-panel" data-panel="safety"><div class="detail-grid" id="safetyGrid"></div><div class="detail-note">Basic public-data checks are not an audit or a guarantee against scams.</div></section>
+<div class="detail-links" id="detailLinks"></div>
+</div></div>
 <script src="https://unpkg.com/lightweight-charts@4.2.2/dist/lightweight-charts.standalone.production.js"></script>
 <script>
 const $=id=>document.getElementById(id);
@@ -123,20 +133,49 @@ $('resetSettings').onclick=()=>{settings={minMcap:20000,maxMcap:500000,minVol:25
 $('notifyBtn').onclick=async()=>{if(!('Notification'in window)){showMessage('Notifications are not supported in this browser.');return}const p=await Notification.requestPermission();if(p==='granted'){settings.browserAlerts=true;localStorage.setItem('gemradar-settings',JSON.stringify(settings));showMessage('Notifications enabled while this page is open. iOS may require adding the site to the Home Screen.')}else showMessage('Notifications were not enabled. Check Safari site permissions.')};
 $('signIn').onclick=()=>alert('Sign-in is not implemented in this free demo; no account or credentials are collected.');
 $('premiumBtn').onclick=()=>alert('Premium styling is a visual category only. No paid signals are claimed or sold.');
-let activeChart=null,chartPair=null,chartRequestId=0,chartResizeObserver=null;
+let activeChart=null,chartPair=null,chartRequestId=0,chartResizeObserver=null,activeToken=null;
 async function openChart(pairAddress,symbol){
- if(!pairAddress){showMessage('A public pool address is not available for this token yet.');return}
- $('chartModal').classList.add('open');$('chartTitle').textContent=symbol+' · Chart';$('chartSub').textContent='Loading public OHLCV data…';$('chartNote').textContent='';$('priceChart').innerHTML='';
+ const token=tokens.find(p=>p.pairAddress===pairAddress);
+ if(!pairAddress||!token){showMessage('This token does not have a public pool address yet.');return}
+ activeToken=token;chartPair={pairAddress};chartRequestId++;
+ $('chartModal').classList.add('open');$('chartTitle').textContent=(token.baseToken?.name||symbol)+' ('+(token.baseToken?.symbol||symbol)+')';
+ $('chartSub').textContent='Live public pair data';$('detailPrice').textContent=token.priceUsd?'$'+Number(token.priceUsd).toLocaleString(undefined,{maximumFractionDigits:8}):'Price unavailable';
+ $('priceChart').innerHTML='';$('chartNote').textContent='Loading candles from the public chart source…';renderTokenDetails(token);
+ document.querySelectorAll('#detailTabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab==='chart'));
+ document.querySelectorAll('.detail-panel').forEach(p=>p.classList.toggle('active',p.dataset.panel==='chart'));
  if(chartResizeObserver){chartResizeObserver.disconnect();chartResizeObserver=null}
  if(activeChart){activeChart.remove();activeChart=null}
- chartPair={pairAddress};chartRequestId++;
- if(!window.LightweightCharts){$('chartSub').textContent='Chart library unavailable; check connection.';return}
+ if(!window.LightweightCharts){$('chartSub').textContent='Chart library did not load';$('chartNote').textContent='Check your internet connection and reload. Token metrics remain available in the other tabs.';return}
  const h=$('priceChart');
  activeChart=LightweightCharts.createChart(h,{width:Math.max(280,h.clientWidth),height:300,layout:{background:{color:'#11141d'},textColor:'#9ea5b6'},grid:{vertLines:{color:'#252a36'},horzLines:{color:'#252a36'}},timeScale:{timeVisible:true,borderColor:'#333848'},rightPriceScale:{borderColor:'#333848'},localization:{priceFormatter:v=>v<0.0001?v.toExponential(2):v<1?v.toPrecision(4):v.toLocaleString(undefined,{maximumFractionDigits:4})}});
  activeChart.__series=activeChart.addCandlestickSeries({upColor:'#28d6a0',downColor:'#ff596b',borderUpColor:'#28d6a0',borderDownColor:'#ff596b',wickUpColor:'#28d6a0',wickDownColor:'#ff596b'});
  if('ResizeObserver'in window){chartResizeObserver=new ResizeObserver(entries=>{if(activeChart&&entries[0])activeChart.applyOptions({width:Math.max(280,Math.floor(entries[0].contentRect.width))})});chartResizeObserver.observe(h)}
  await chartLoad('minute')
 }
+function detailCell(label,value){return `<div class="detail-cell"><div class="k">${esc(label)}</div><div class="v">${esc(value??'Unavailable')}</div></div>`}
+function renderTokenDetails(p){
+ const m=metrics(p),tx5=p.txns?.m5||{},tx1=p.txns?.h1||{},tx24=p.txns?.h24||{},price=Number(p.priceUsd)||0,created=Number(p.pairCreatedAt)||0,buys=Number(tx1.buys)||0,sells=Number(tx1.sells)||0,total=buys+sells;
+ $('overviewGrid').innerHTML=[
+  detailCell('Market cap',m.mcap?fmt(m.mcap):'Unavailable'),detailCell('FDV',p.fdv?fmt(p.fdv):'Unavailable'),
+  detailCell('Price USD',price?'$'+price.toLocaleString(undefined,{maximumFractionDigits:10}):'Unavailable'),detailCell('Liquidity',m.liq?fmt(m.liq):'Unavailable'),
+  detailCell('24h volume',m.vol?fmt(m.vol):'Unavailable'),detailCell('Estimated 1m volume',m.vol1m?fmt(m.vol1m):'Unavailable'),
+  detailCell('24h change',Number.isFinite(m.change)?m.change.toFixed(2)+'%':'Unavailable'),detailCell('Pair age',created?ago(Date.now()-created):'Unavailable')
+ ].join('');
+ $('activityGrid').innerHTML=[
+  detailCell('Buys · 5m',tx5.buys??'Unavailable'),detailCell('Sells · 5m',tx5.sells??'Unavailable'),
+  detailCell('Buys · 1h',tx1.buys??'Unavailable'),detailCell('Sells · 1h',tx1.sells??'Unavailable'),
+  detailCell('Buys · 24h',tx24.buys??'Unavailable'),detailCell('Sells · 24h',tx24.sells??'Unavailable'),
+  detailCell('1h buy pressure',total?Math.round(buys/total*100)+'%':'Unavailable'),detailCell('1h price change',p.priceChange?.h1!=null?Number(p.priceChange.h1).toFixed(2)+'%':'Unavailable')
+ ].join('');
+ $('holdersNote').textContent='DexScreener does not provide verified holder counts or wallet concentration in this pair response. Holder analytics are unavailable here; no numbers are fabricated.';
+ $('safetyGrid').innerHTML=[
+  detailCell('Liquidity',m.liq?fmt(m.liq):'Unavailable'),detailCell('Liquidity / mcap',m.liq&&m.mcap?(m.liq/m.mcap*100).toFixed(2)+'%':'Unavailable'),
+  detailCell('Pair address',p.pairAddress||'Unavailable'),detailCell('Chain',p.chainId||'Unavailable'),
+  detailCell('DEX',p.dexId||'Unavailable'),detailCell('Created',created?new Date(created).toLocaleString():'Unavailable')
+ ].join('');
+ const links=[];if(p.url)links.push(`<a href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">Open DexScreener ↗</a>`);if(p.pairAddress)links.push(`<a href="https://solscan.io/account/${encodeURIComponent(p.pairAddress)}" target="_blank" rel="noopener noreferrer">View on Solscan ↗</a>`);$('detailLinks').innerHTML=links.join('');
+}
+$('detailTabs').addEventListener('click',e=>{const b=e.target.closest('[data-tab]');if(!b)return;document.querySelectorAll('#detailTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.detail-panel').forEach(x=>x.classList.toggle('active',x.dataset.panel===b.dataset.tab));if(b.dataset.tab==='chart'&&activeChart)activeChart.timeScale().fitContent()});
 async function chartLoad(tf){
  if(!chartPair||!activeChart)return;
  const requestId=++chartRequestId,pairAddress=chartPair.pairAddress,chart=activeChart;
@@ -154,10 +193,10 @@ async function chartLoad(tf){
   chart.__series.setData(candles);chart.timeScale().fitContent();
   $('chartSub').textContent='Public GeckoTerminal OHLCV · '+candles.length+' candles';
   $('chartNote').textContent='Candles depend on public pool history and may be unavailable for new or illiquid tokens.';
- }catch(e){if(requestId===chartRequestId){$('chartSub').textContent='Chart unavailable';$('chartNote').textContent=e.message}}
+ }catch(e){if(requestId===chartRequestId){$('chartSub').textContent='Candles temporarily unavailable';$('chartNote').textContent='The public chart provider did not return candles for this interval. Try another timeframe or open the pair on DexScreener. Token details are still available in Overview, Activity and Safety.';if(activeToken?.url){const a=document.createElement('a');a.href=activeToken.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Open live chart ↗';a.style.color='#a9dfff';a.style.display='inline-block';a.style.marginTop='8px';$('chartNote').appendChild(document.createTextNode(' '));$('chartNote').appendChild(a)}}}
 }
 $('coinList').addEventListener('click',e=>{const b=e.target.closest('.open-chart');if(b)openChart(b.dataset.pair,b.dataset.token)});
-$('closeChart').onclick=()=>{$('chartModal').classList.remove('open');chartPair=null;chartRequestId++;if(chartResizeObserver){chartResizeObserver.disconnect();chartResizeObserver=null}if(activeChart){activeChart.remove();activeChart=null}};
+$('closeChart').onclick=()=>{$('chartModal').classList.remove('open');chartPair=null;activeToken=null;chartRequestId++;if(chartResizeObserver){chartResizeObserver.disconnect();chartResizeObserver=null}if(activeChart){activeChart.remove();activeChart=null}};
 $('chartModal').onclick=e=>{if(e.target===$('chartModal'))$('closeChart').click()};
 $('chartControls').querySelectorAll('button').forEach(b=>b.onclick=()=>chartLoad(b.dataset.tf));
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
