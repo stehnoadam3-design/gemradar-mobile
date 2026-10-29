@@ -42,3 +42,7 @@ This starter version can show browser notifications when the app is open and ref
 
 ## Free public data
 No API key is required for the current DexScreener endpoints. Public APIs may rate-limit, change, or be temporarily unavailable. This app does not trade tokens and never asks for wallet keys or seed phrases.
+
+
+## Dashboard UI update
+The mobile dashboard now uses a compact dark feed layout inspired by the supplied reference: summary tiles, Newest/Heaters/Trending filters, token/Mcap/1m volume/Peak columns, crown-style rule matches, local peak tracking, browser notifications while open, and an in-app OHLCV chart. It uses public DexScreener and GeckoTerminal endpoints. The compact trend indicator displays the actual public 24h price change rather than a fabricated sparkline. “Since first seen” peak tracking is local to the browser and is not an official callout price. Sign-in and paid Premium are visual-only and do not collect credentials or charge money.
