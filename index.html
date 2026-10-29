@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12"><meta name="description" content="Mobile Solana token market dashboard using public market data.">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>GemRadar — Live Token Feed</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0d12;--panel:#121620;--panel2:#171d29;--line:#252d3c;--text:#f1f4fa;--muted:#8994a8;--green:#43d6a0;--gold:#f3c969;--red:#ff7b87;--blue:#83a9ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);background:#1a2130;color:var(--text);border-radius:12px;padding:10px 12px}button:active{transform:scale(.98)}
+.app{max-width:1000px;margin:auto;padding:env(safe-area-inset-top) 14px calc(26px + env(safe-area-inset-bottom))}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 2px 14px;gap:12px}.brand{display:flex;align-items:center;gap:10px;font-size:19px;font-weight:850;letter-spacing:-.6px}.logo{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,#8c72ff,#4cbdc8);display:grid;place-items:center;color:#fff;font-weight:900}.top-actions{display:flex;gap:7px}.sub{color:var(--muted);font-size:12px}
+.status{display:inline-flex;align-items:center;gap:7px;color:var(--green);font-size:11px;font-weight:700}.dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}
+.hero{padding:18px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(ellipse at top right,#29264a 0%,#151824 42%,#121620 100%);margin-bottom:12px}.hero-row{display:flex;justify-content:space-between;gap:14px;align-items:flex-start}.eyebrow{text-transform:uppercase;letter-spacing:1.3px;font-size:10px;color:#a9b1c3;font-weight:800}.hero h1{font-size:25px;line-height:1.15;letter-spacing:-.8px;margin:7px 0}.hero p{margin:7px 0 0;color:#aab3c4;font-size:12px;max-width:500px}.live-pill{white-space:nowrap;border:1px solid #315e55;background:#16342e;color:var(--green);border-radius:20px;padding:6px 9px;font-size:10px;font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}.stat .label{color:var(--muted);font-size:11px}.stat .value{font-weight:800;font-size:18px;margin-top:3px}
+.toolbar{display:flex;gap:8px;align-items:center;margin:14px 0 10px}.search{min-width:0;flex:1;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;color:var(--text);outline:none}.search:focus{border-color:#6c7dba}.filters{display:flex;gap:7px;overflow:auto;padding:2px 0 10px;scrollbar-width:none}.filters button{white-space:nowrap;font-size:12px;padding:8px 11px;color:#aeb7c8}.filters button.active{background:#292748;border-color:#5c56a0;color:#dedaff}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:15px 1px 8px}.section-head h2{font-size:15px;margin:0}.table-head{display:grid;grid-template-columns:minmax(0,1.5fr) .85fr .85fr;gap:8px;padding:8px 12px;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.8px}
+.coin-list{display:flex;flex-direction:column;gap:8px}.coin{display:grid;grid-template-columns:minmax(0,1.5fr) .85fr .85fr;gap:8px;align-items:center;padding:12px;background:var(--panel);border:1px solid var(--line);border-radius:15px;min-width:0}.coin-main{display:flex;gap:10px;align-items:center;min-width:0}.avatar{width:39px;height:39px;flex:0 0 39px;border-radius:13px;background:#20283a;object-fit:cover;display:grid;place-items:center;font-weight:850;color:#c4d0eb}.token-info{min-width:0}.symbol{font-weight:850;display:flex;align-items:center;gap:5px;min-width:0}.symbol span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.name{font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}.chain{font-size:9px;color:#a7b7d4;background:#202b3b;border-radius:5px;padding:2px 4px;font-weight:800}.metric{font-weight:800;font-variant-numeric:tabular-nums}.metric small{display:block;color:var(--muted);font-size:10px;font-weight:500;margin-top:3px}.positive{color:var(--green)}.negative{color:var(--red)}.crown{color:var(--gold);font-size:12px;filter:drop-shadow(0 0 5px #9a752b)}.coin-buttons{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid #202735;margin-top:2px;gap:8px}.chip{font-size:10px;color:#aab5c8}.coin-buttons a{color:#a8b9ff;text-decoration:none;font-size:11px;font-weight:750}.empty{padding:28px 15px;text-align:center;border:1px dashed var(--line);border-radius:14px;color:var(--muted)}.message{margin:12px 0;padding:10px 12px;border-radius:11px;background:#17212a;color:#a8c9c0;font-size:12px}.message.error{background:#301b23;color:#ffb3bd}.footer{padding:20px 3px 8px;color:var(--muted);font-size:11px}.footer strong{color:#cbd3e2}
+.modal-backdrop{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;justify-content:center;padding:12px;z-index:10}.modal-backdrop.open{display:flex}.modal{width:min(100%,520px);background:#151a25;border:1px solid var(--line);border-radius:20px;padding:18px;max-height:85vh;overflow:auto}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);font-size:12px}.field{display:block;margin:14px 0}.field label{display:block;font-size:12px;color:#b7c1d2;margin-bottom:6px}.field input,.field select{width:100%;background:#0e121a;border:1px solid var(--line);border-radius:10px;padding:11px;color:var(--text)}.modal-actions{display:flex;gap:8px}.modal-actions button{flex:1}.primary{background:#6255c9;border-color:#7568db}.close{float:right}
+.chart-modal{width:min(100%,720px);align-self:center}.chart-title{font-size:18px;font-weight:850;margin:2px 0 3px}.chart-controls{display:flex;gap:7px;margin-top:13px}.chart-controls button{font-size:12px;padding:7px 12px}.chart-controls button.active{background:#292748;border-color:#5c56a0;color:#dedaff}
+@media(min-width:650px){.app{padding-left:22px;padding-right:22px}.coin{grid-template-columns:minmax(0,1.6fr) .75fr .75fr}.hero h1{font-size:30px}.coin-buttons{grid-column:auto;border:0;margin:0;padding:0;justify-content:flex-end}.table-head{grid-template-columns:minmax(0,1.6fr) .75fr .75fr}.coin-list{gap:7px}}
+</style>
+</head>
+<body><main class="app">
+<header><div class="brand"><div class="logo">G</div><div>GemRadar<div class="sub" style="font-weight:500;letter-spacing:0">Solana market scanner</div></div></div><div class="top-actions"><button id="notifyBtn" aria-label="Notifications">♧ Alerts</button><button id="settingsBtn" aria-label="Settings">⚙</button></div></header>
+<section class="hero"><div class="hero-row"><div><div class="eyebrow">Market pulse · public data</div><h1>Find the signal.<br>Skip the noise.</h1><p>A mobile-first token feed powered by public DexScreener data. Crown badges are your own transparent filters—not paid signals or guarantees.</p></div><span class="live-pill"><span class="dot" style="display:inline-block"></span> LIVE DATA</span></div></section>
+<div class="stats"><div class="stat"><div class="label">Tokens loaded</div><div class="value" id="statTokens">—</div></div><div class="stat"><div class="label">Crown matches</div><div class="value" id="statCrowns">—</div></div><div class="stat"><div class="label">Last refresh</div><div class="value" id="statUpdated" style="font-size:14px">Waiting…</div></div></div>
+<div class="toolbar"><input class="search" id="search" placeholder="Search symbol or token name…" autocomplete="off"><button id="refreshBtn">↻ Refresh</button></div>
+<div class="filters" id="filters"><button class="active" data-filter="all">All tokens</button><button data-filter="crown">♛ Crown alerts</button><button data-filter="volume">High volume</button><button data-filter="gainers">24h gainers</button></div>
+<div class="section-head"><h2>Live token feed</h2><span class="sub" id="feedStatus">Connecting…</span></div>
+<div class="table-head"><div>Token</div><div>Market cap</div><div>24h volume</div></div>
+<div id="coinList" class="coin-list"><div class="empty">Loading public market data…</div></div>
+<div id="message" class="message">Data comes from a public API. This feed uses recently boosted token profiles and their available Solana pairs; it is not a complete list of every new token.</div>
+<div class="footer"><strong>GemRadar is an independent demo, not affiliated with Gembot.io.</strong><br>Market data can be delayed or incomplete. Crown alerts are rule-based filters, not predictions. Memecoins are highly volatile and can lose most or all of their value.</div>
+</main>
+<div class="modal-backdrop" id="settingsModal"><div class="modal"><button class="close" id="closeSettings">✕</button><h2>Alert settings</h2><p>Choose the criteria for the gold crown and optional browser alerts. Settings are saved on this device.</p>
+<div class="field"><label for="minMcap">Minimum market cap (USD)</label><input id="minMcap" type="number" min="0" value="20000"></div>
+<div class="field"><label for="maxMcap">Maximum market cap (USD)</label><input id="maxMcap" type="number" min="0" value="500000"></div>
+<div class="field"><label for="minVol">Minimum 24h volume (USD)</label><input id="minVol" type="number" min="0" value="25000"></div>
+<div class="field"><label for="minLiq">Minimum liquidity (USD)</label><input id="minLiq" type="number" min="0" value="10000"></div>
+<div class="field"><label for="poll">Refresh interval</label><select id="poll"><option value="30">30 seconds</option><option value="60" selected>60 seconds</option><option value="120">2 minutes</option><option value="300">5 minutes</option></select></div>
+<div class="field"><label><input id="browserAlerts" type="checkbox" style="width:auto;margin-right:7px">Notify me when a new crown match appears (while this page is open)</label></div>
+<div class="modal-actions"><button id="saveSettings" class="primary">Save settings</button><button id="resetSettings">Reset</button></div></div></div>
+<div class="modal-backdrop" id="chartModal"><div class="modal chart-modal"><button class="close" id="closeChart">✕</button><div class="chart-title" id="chartTitle">Token chart</div><div class="sub" id="chartSub">Loading chart data…</div><div class="chart-controls" id="chartControls"><button data-tf="minute" class="active">1m</button><button data-tf="hour">1h</button><button data-tf="day">1d</button></div><div id="priceChart" style="height:310px;width:100%;margin-top:10px"></div><div id="chartNote" class="sub" style="margin-top:8px">Chart data is supplied by a public market-data endpoint.</div></div></div>
+<script src="https://unpkg.com/lightweight-charts@4.2.2/dist/lightweight-charts.standalone.production.js"></script>
+<script>
+const API='https://api.dexscreener.com';
+const $=id=>document.getElementById(id);
+let tokens=[], filter='all', timer=null, seen=new Set(), settings={minMcap:20000,maxMcap:500000,minVol:25000,minLiq:10000,poll:60,browserAlerts:false};
+try{Object.assign(settings,JSON.parse(localStorage.getItem('gemradar-settings')||'{}'))}catch(e){}
+const fmt=n=>{if(n==null||!Number.isFinite(Number(n)))return '—';n=Number(n);if(n>=1e9)return '$'+(n/1e9).toFixed(2)+'B';if(n>=1e6)return '$'+(n/1e6).toFixed(2)+'M';if(n>=1e3)return '$'+(n/1e3).toFixed(1)+'K';return '$'+n.toFixed(n<1?4:0)};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function metrics(pair){const mcap=Number(pair.marketCap??pair.fdv??0),vol=Number(pair.volume?.h24??0),liq=Number(pair.liquidity?.usd??0),change=Number(pair.priceChange?.h24??0);return {mcap,vol,liq,change}}
+function isCrown(p){const m=metrics(p);return m.mcap>=Number(settings.minMcap)&&m.mcap<=Number(settings.maxMcap)&&m.vol>=Number(settings.minVol)&&m.liq>=Number(settings.minLiq)}
+function showMessage(msg,error=false){$('message').textContent=msg;$('message').className='message'+(error?' error':'')}
+async function load(){
+ $('refreshBtn').textContent='…';$('feedStatus').textContent='Refreshing…';
+ try{
+  const r=await fetch(API+'/token-boosts/latest/v1',{cache:'no-store'});if(!r.ok)throw Error('API returned '+r.status);
+  const list=await r.json();const ids=[...new Set((Array.isArray(list)?list:[]).filter(x=>x.chainId==='solana'&&x.tokenAddress).map(x=>x.tokenAddress))].slice(0,45);
+  if(!ids.length)throw Error('No recent Solana token profiles were returned.');
+  const results=await Promise.all(ids.map(async id=>{try{const res=await fetch(API+'/latest/dex/tokens/'+encodeURIComponent(id),{cache:'no-store'});if(!res.ok)return null;const data=await res.json();return (data.pairs||[]).filter(p=>p.chainId==='solana').sort((a,b)=>(Number(b.liquidity?.usd)||0)-(Number(a.liquidity?.usd)||0))[0]||null}catch{return null}}));
+  const byAddress=new Map();for(const p of results.filter(Boolean)){const key=p.baseToken?.address||p.pairAddress;if(!key)continue;const old=byAddress.get(key);if(!old||(Number(p.liquidity?.usd)||0)>(Number(old.liquidity?.usd)||0))byAddress.set(key,p)}
+  tokens=[...byAddress.values()].sort((a,b)=>(Number(b.pairCreatedAt)||0)-(Number(a.pairCreatedAt)||0));
+  const fresh=[];for(const p of tokens){const key=p.baseToken?.address;if(key&&!seen.has(key)){seen.add(key);if(isCrown(p))fresh.push(p)}}
+  if(settings.browserAlerts&&fresh.length&&'Notification'in window&&Notification.permission==='granted'){fresh.slice(0,3).forEach(p=>new Notification('♛ Crown match: '+(p.baseToken?.symbol||'Token'),{body:`Mcap ${fmt(metrics(p).mcap)} · 24h volume ${fmt(metrics(p).vol)}`}))}
+  $('statTokens').textContent=tokens.length;$('statCrowns').textContent=tokens.filter(isCrown).length;$('statUpdated').textContent=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  $('feedStatus').textContent='Updated just now';showMessage('Live data connected. Feed includes recently boosted Solana token profiles only; values and coverage depend on the public data provider.');
+  render();
+ }catch(e){$('feedStatus').textContent='Data unavailable';showMessage('Could not load live data: '+e.message+'. Check your connection and tap Refresh. No sample tokens are shown.',true);if(!tokens.length)$('coinList').innerHTML='<div class="empty">Live data is unavailable right now. Try refreshing later.</div>'}
+ finally{$('refreshBtn').textContent='↻ Refresh'}
+}
+function getBaseline(pair,currentMcap){
+ const key=pair.baseToken?.address;
+ if(!key||!(currentMcap>0))return null;
+ const storeKey='gemradar-baseline-'+key;
+ try{let old=localStorage.getItem(storeKey);if(old){const parsed=JSON.parse(old);return Number(parsed.mcap)||null}
+ localStorage.setItem(storeKey,JSON.stringify({mcap:currentMcap,at:Date.now()}));return currentMcap}catch{return currentMcap}
+}
+let activeChart=null, chartResize=null, chartPair=null;
+async function openBuiltInChart(pairAddress,symbol,pairUrl){
+ $('chartModal').classList.add('open');$('chartTitle').textContent=symbol+' · Price chart';$('chartSub').textContent='Loading public OHLCV data…';$('chartNote').textContent='Chart data may be unavailable for very new or illiquid tokens.';
+ if(activeChart){try{activeChart.remove()}catch{} activeChart=null}
+ const holder=$('priceChart');holder.innerHTML='';
+ if(!window.LightweightCharts){$('chartSub').textContent='Chart library could not load. Check your internet connection.';return}
+ chartPair={pairAddress,symbol,pairUrl,tf:'minute'};
+ activeChart=LightweightCharts.createChart(holder,{width:holder.clientWidth,height:310,layout:{background:{color:'#151a25'},textColor:'#aeb7c8'},grid:{vertLines:{color:'#222a38'},horzLines:{color:'#222a38'}},rightPriceScale:{borderColor:'#303849'},timeScale:{borderColor:'#303849',timeVisible:true,secondsVisible:false},crosshair:{mode:1}});
+ const series=activeChart.addCandlestickSeries({upColor:'#28d6a0',downColor:'#ff5968',borderUpColor:'#28d6a0',borderDownColor:'#ff5968',wickUpColor:'#28d6a0',wickDownColor:'#ff5968'});
+ activeChart.__series=series;
+ chartResize=()=>{if(activeChart)activeChart.applyOptions({width:holder.clientWidth})};
+ window.addEventListener('resize',chartResize);
+ await fetchChart('minute');
+}
+async function fetchChart(tf){
+ if(!chartPair||!activeChart)return;
+ chartPair.tf=tf;$('chartControls').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.tf===tf));
+ $('chartSub').textContent='Loading '+tf+' candles…';
+ const network='solana', pool=chartPair.pairAddress;
+ const params=tf==='minute'?'minute?aggregate=1&limit=100':tf==='hour'?'hour?aggregate=1&limit=100':'day?aggregate=1&limit=100';
+ const url='https://api.geckoterminal.com/api/v2/networks/'+network+'/pools/'+encodeURIComponent(pool)+'/ohlcv/'+params;
+ try{
+  const r=await fetch(url,{headers:{accept:'application/json'}});if(!r.ok)throw Error('OHLCV API status '+r.status);
+  const data=await r.json(), rows=data.data?.attributes?.ohlcv_list||[];
+  if(!rows.length)throw Error('No candle data for this pair yet');
+  const candles=rows.map(x=>({time:Number(x[0]),open:Number(x[1]),high:Number(x[2]),low:Number(x[3]),close:Number(x[4])})).filter(x=>x.time>0&&[x.open,x.high,x.low,x.close].every(Number.isFinite)).sort((a,b)=>a.time-b.time);
+  chartPair&&activeChart.__series.setData(candles);activeChart.timeScale().fitContent();$('chartSub').textContent='Public GeckoTerminal OHLCV · '+candles.length+' candles';$('chartNote').textContent='Candles are fetched live from a public endpoint. If no candles exist yet, try a different timeframe.';
+ }catch(e){$('chartSub').textContent='Chart data unavailable';$('chartNote').textContent=e.message+' · This token may be too new or the public API may be rate-limited.'}
+}
+$('closeChart').onclick=()=>{$('chartModal').classList.remove('open');if(chartResize)window.removeEventListener('resize',chartResize);chartPair=null;if(activeChart){activeChart.remove();activeChart=null}};
+$('chartModal').onclick=e=>{if(e.target===$('chartModal'))$('closeChart').click()};
+$('chartControls').querySelectorAll('button').forEach(b=>b.onclick=()=>fetchChart(b.dataset.tf));
+function render(){
+ const q=$('search').value.trim().toLowerCase();let arr=tokens.filter(p=>{const m=metrics(p),symbol=(p.baseToken?.symbol||'').toLowerCase(),name=(p.baseToken?.name||'').toLowerCase();if(q&&!symbol.includes(q)&&!name.includes(q))return false;if(filter==='crown'&&!isCrown(p))return false;if(filter==='volume'&&m.vol<Number(settings.minVol))return false;if(filter==='gainers'&&m.change<=0)return false;return true});
+ if(!arr.length){$('coinList').innerHTML='<div class="empty">No tokens match these filters right now.</div>';return}
+ $('coinList').innerHTML=arr.map(p=>{const m=metrics(p),t=p.baseToken||{},c=isCrown(p),logo=p.info?.imageUrl;const changeClass=m.change>=0?'positive':'negative';const age=p.pairCreatedAt?timeAgo(Date.now()-p.pairCreatedAt):'age n/a';const chart=p.url||('https://dexscreener.com/solana/'+p.pairAddress);const baseline=getBaseline(p,m.mcap);const since=baseline>0?((m.mcap/baseline)-1)*100:null;return `<article class="coin"><div class="coin-main">${logo?`<img class="avatar" src="${esc(logo)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=&quot;avatar&quot;>◈</div>'">`:'<div class="avatar">◈</div>'}<div class="token-info"><div class="symbol"><span>${esc(t.symbol||'UNKNOWN')}</span>${c?'<span class="crown" title="Matches your filters">♛</span>':''}</div><div class="name">${esc(t.name||'Unknown token')}</div><div class="sub">${age} · SOL</div></div></div><div class="metric">${fmt(m.mcap)}<small>FDV / mcap*</small></div><div class="metric">${fmt(m.vol)}<small>24h volume</small></div><div class="coin-buttons"><span class="chip ${since!==null&&since>=0?'positive':'negative'}">${since===null?'Since callout: —':(since>=0?'+':'')+since.toFixed(1)+'% since callout'}</span><button class="open-chart" data-pair="${esc(p.pairAddress||'')}" data-token="${esc(t.symbol||'Token')}" data-url="${esc(chart)}" style="padding:6px 10px;font-size:11px">Chart ↗</button></div></article>`}).join('');
+}
+$('coinList').addEventListener('click',e=>{const b=e.target.closest('.open-chart');if(!b)return;openBuiltInChart(b.dataset.pair,b.dataset.token,b.dataset.url)});
+function timeAgo(ms){if(ms<0)return 'new';const m=Math.floor(ms/60000);if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago'}
+function syncSettings(){for(const k of ['minMcap','maxMcap','minVol','minLiq','poll','browserAlerts']){const el=$(k);el.value=String(settings[k]);if(el.type==='checkbox')el.checked=!!settings[k]}}
+function schedule(){if(timer)clearInterval(timer);timer=setInterval(load,Math.max(30,Number(settings.poll)||60)*1000)}
+$('refreshBtn').onclick=load;$('search').oninput=render;
+$('filters').querySelectorAll('button').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;$('filters').querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('settingsBtn').onclick=()=>{$('settingsModal').classList.add('open');syncSettings()};
+$('closeSettings').onclick=()=>$('settingsModal').classList.remove('open');
+$('settingsModal').onclick=e=>{if(e.target===$('settingsModal'))$('settingsModal').classList.remove('open')};
+$('saveSettings').onclick=async()=>{for(const k of ['minMcap','maxMcap','minVol','minLiq','poll'])settings[k]=Number($(k).value)||0;settings.browserAlerts=$('browserAlerts').checked;if(settings.browserAlerts&&'Notification'in window&&Notification.permission==='default'){const p=await Notification.requestPermission();if(p!=='granted')settings.browserAlerts=false}localStorage.setItem('gemradar-settings',JSON.stringify(settings));$('settingsModal').classList.remove('open');schedule();render();load()};
+$('resetSettings').onclick=()=>{settings={minMcap:20000,maxMcap:500000,minVol:25000,minLiq:10000,poll:60,browserAlerts:false};syncSettings()};
+$('notifyBtn').onclick=async()=>{if(!('Notification'in window)){showMessage('Browser notifications are not supported in this browser.',true);return}const p=await Notification.requestPermission();if(p==='granted'){settings.browserAlerts=true;localStorage.setItem('gemradar-settings',JSON.stringify(settings));syncSettings();showMessage('Browser notifications enabled while GemRadar is open. iOS may require adding this site to the Home Screen first.')}else showMessage('Notifications were not enabled. You can change this in browser/site settings.',true)};
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+syncSettings();load();schedule();
+</script></body></html>
