@@ -11,10 +11,10 @@
 header{height:82px;display:grid;grid-template-columns:1fr 48px 1fr;align-items:center;gap:8px}.signin{justify-self:start;background:#171a23;border:0;border-radius:20px;padding:13px 19px;font-weight:750}.brandmark{justify-self:center;color:var(--green);font-size:35px;line-height:1}.premium-link{justify-self:end;color:var(--purple);font-weight:750;border:0;padding:8px 0;white-space:nowrap}.topbar{display:flex;justify-content:space-between;align-items:center;margin:10px 0 17px}.day-select{font-size:20px;font-weight:800;border:0;padding:0}.tiny-arrow{color:#9ea3b3;font-size:16px;margin-left:5px}.actions{display:flex;gap:7px}.icon-btn{width:37px;height:37px;border-radius:50%;padding:0;font-size:17px}
 .stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:27px}.stat{min-height:108px;border-radius:22px;background:#0f121b;padding:15px 9px 12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;overflow:hidden}.stat.premium{background:#151326}.stat .label{font-size:13px;font-weight:750;white-space:nowrap}.stat .value{font-size:27px;line-height:1.1;color:var(--cyan);font-weight:850;letter-spacing:-1px}.stat .foot{font-size:12px;font-weight:750;white-space:nowrap}.stat .glyph{font-size:15px;color:#aab1c2;margin-right:3px}.purple{color:var(--purple)!important}.cyan{color:var(--cyan)!important}.green{color:var(--green)!important}
 .filter-row{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:0 0 13px;margin-bottom:21px}.filter-row::-webkit-scrollbar{display:none}.pill{white-space:nowrap;border-radius:24px;padding:11px 15px;font-size:13px;font-weight:650;border-color:#41444f}.pill.active{border-color:#7c7e8b;background:#171923}.pill .ico{margin-right:5px;color:#aab0c0}
-.table-head{display:grid;grid-template-columns:minmax(0,1.55fr) .65fr .72fr .75fr;gap:8px;padding:0 0 12px;border-bottom:1px solid #22242e;color:#a1a5b4;font-weight:650;font-size:12px}.table-head div:not(:first-child){text-align:right}
-.coin-list{display:flex;flex-direction:column}.coin{display:grid;grid-template-columns:minmax(0,1.55fr) .65fr .72fr .75fr;gap:8px;align-items:center;min-height:93px;padding:12px 0;border-bottom:1px solid #151821;min-width:0}.coin-main{display:flex;gap:10px;align-items:center;min-width:0}.avatar{width:42px;height:42px;flex:0 0 42px;border-radius:13px;border:2px solid #27d99f;object-fit:cover;background:#111723;display:grid;place-items:center;font-size:18px;font-weight:850;color:#d2f8ed}.token-info{min-width:0}.symbol{font-weight:850;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px}.chain{color:#27c9d8;font-size:14px}.token-meta{font-size:11px;color:#969aaa;margin-top:4px;white-space:nowrap}.token-meta .speaker{font-size:10px}.metric{text-align:right;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap}.metric small{display:block;color:#999eae;font-size:11px;margin-top:4px;font-weight:650}.peak{color:var(--purple)}.peak .crown{font-size:12px;margin-right:3px}.spark{display:block;width:100%;height:36px;overflow:visible}.coin-main button{padding:0;border:0;text-align:left;min-width:0}.empty{padding:30px 12px;text-align:center;color:var(--muted)}.message{font-size:11px;color:#8e94a6;line-height:1.5;padding:15px 0}.status{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:11px}.dot{width:6px;height:6px;background:currentColor;border-radius:50%}.footer{color:#777d8e;font-size:10px;padding:10px 0 20px}
+.table-head{display:grid;grid-template-columns:minmax(0,1.35fr) .62fr .68fr .58fr 48px;gap:5px;padding:0 0 12px;border-bottom:1px solid #22242e;color:#a1a5b4;font-weight:650;font-size:12px}.table-head div:not(:first-child){text-align:right}
+.coin-list{display:flex;flex-direction:column}.coin{display:grid;grid-template-columns:minmax(0,1.35fr) .62fr .68fr .58fr 48px;gap:5px;align-items:center;min-height:93px;padding:12px 0;border-bottom:1px solid #151821;min-width:0}.coin-main{display:flex;gap:10px;align-items:center;min-width:0}.avatar{width:42px;height:42px;flex:0 0 42px;border-radius:13px;border:2px solid #27d99f;object-fit:cover;background:#111723;display:grid;place-items:center;font-size:18px;font-weight:850;color:#d2f8ed}.token-info{min-width:0}.symbol{font-weight:850;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px}.chain{color:#27c9d8;font-size:14px}.token-meta{font-size:11px;color:#969aaa;margin-top:4px;white-space:nowrap}.token-meta .speaker{font-size:10px}.metric{text-align:right;font-size:12px;font-weight:800;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:0;overflow:hidden;text-overflow:clip}.metric small{display:block;color:#999eae;font-size:11px;margin-top:4px;font-weight:650}.peak{color:var(--purple);font-size:11px}.peak .crown{font-size:10px;margin-right:1px}.spark-button{display:flex;align-items:center;justify-content:center;width:48px;height:38px;padding:0;border:0;border-radius:5px;overflow:hidden;color:#777d8e;font-size:12px}.spark{display:block;width:48px;height:36px;overflow:hidden}.spark-button:focus-visible{outline:2px solid var(--green);outline-offset:2px}.coin-main button{padding:0;border:0;text-align:left;min-width:0}.empty{padding:30px 12px;text-align:center;color:var(--muted)}.message{font-size:11px;color:#8e94a6;line-height:1.5;padding:15px 0}.status{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:11px}.dot{width:6px;height:6px;background:currentColor;border-radius:50%}.footer{color:#777d8e;font-size:10px;padding:10px 0 20px}
 .modal-backdrop{position:fixed;inset:0;z-index:10;background:#000b;display:none;align-items:flex-end;justify-content:center;padding:12px}.modal-backdrop.open{display:flex}.modal{width:min(100%,550px);max-height:88vh;overflow:auto;background:#11141d;border:1px solid #303443;border-radius:23px;padding:18px}.modal h2{font-size:20px;margin:0 0 5px}.modal p{color:#9da3b3;font-size:12px}.close{float:right}.field{margin:15px 0}.field label{display:block;color:#b7bdcc;font-size:12px;margin-bottom:7px}.field input,.field select{width:100%;background:#090c13;border:1px solid #343947;border-radius:11px;padding:12px;color:white}.modal-actions{display:flex;gap:8px}.modal-actions button{flex:1}.primary{background:#24d39d;color:#04130f;border:0;font-weight:850}.chart-modal{align-self:center;width:min(100%,720px)}.chart-controls{display:flex;gap:7px;margin-top:12px}.chart-controls button{padding:7px 13px;font-size:12px}.chart-controls button.active{color:#cbbaff;background:#28213f;border-color:#6d59a9}.chart-title{font-size:18px;font-weight:850}.sub{font-size:11px;color:#9ca2b3;margin-top:4px}
-@media(max-width:380px){.app{padding:0 11px}.stat-grid{gap:6px}.stat{padding:12px 4px;min-height:101px;border-radius:17px}.stat .label{font-size:11px}.stat .value{font-size:24px}.stat .foot{font-size:10px}.coin{grid-template-columns:minmax(0,1.4fr) .66fr .7fr .7fr;gap:5px}.avatar{width:36px;height:36px;flex-basis:36px}.coin-main{gap:7px}.symbol{font-size:15px}.metric{font-size:12px}.metric small{font-size:10px}.table-head{font-size:10px;grid-template-columns:minmax(0,1.4fr) .66fr .7fr .7fr}}
+@media(max-width:380px){.app{padding:0 10px}.stat-grid{gap:6px}.stat{padding:12px 4px;min-height:101px;border-radius:17px}.stat .label{font-size:11px}.stat .value{font-size:24px}.stat .foot{font-size:10px}.coin{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px}.table-head{grid-template-columns:minmax(0,1.25fr) .58fr .63fr .52fr 42px;gap:4px;font-size:10px}.avatar{width:34px;height:34px;flex-basis:34px}.coin-main{gap:6px}.symbol{font-size:13px}.metric{font-size:10px}.metric small{font-size:9px}.spark-button{width:42px}.spark{width:42px}}
 </style>
 </head>
 <body><main class="app">
@@ -31,9 +31,9 @@ header{height:82px;display:grid;grid-template-columns:1fr 48px 1fr;align-items:c
 <button class="pill" data-sort="heaters">♨ Heaters</button><button class="pill" data-sort="trending">Trending</button>
 <button class="pill" id="alertsFilter">♛ Crown alerts</button>
 </div>
-<div class="table-head"><div>Token <span>⌄</span></div><div>Mcap</div><div>1m Vol</div><div>Peak</div></div>
+<div class="table-head"><div>Token <span>⌄</span></div><div>Mcap</div><div>1m Vol</div><div>Peak</div><div aria-label="Price chart">Chart</div></div>
 <div id="coinList" class="coin-list"><div class="empty">Connecting to public market data…</div></div>
-<div class="message" id="message"><span class="status"><span class="dot"></span>Connecting</span> · Public market data only. Performance is tracked from the time this browser first observes a token; it is not a historical Gembot callout record.</div>
+<div class="message" id="message"><span class="status"><span class="dot"></span>Connecting</span> · Public market data only. Free/Premium hit rates remain unavailable without a verified callout-history feed. Local peaks are tracked from the first time this browser observes a token.</div>
 <div class="footer">GemRadar is an independent project and is not affiliated with Gembot.io. Crown alerts are user-defined filters, not paid signals or guarantees. Public data may be delayed or incomplete.</div>
 </main>
 <div class="modal-backdrop" id="settingsModal"><div class="modal"><button class="close" id="closeSettings">✕</button><h2>Dashboard settings</h2><p>Set transparent local filters for crown-style alerts. These are not official Gembot premium calls.</p>
@@ -49,7 +49,7 @@ header{height:82px;display:grid;grid-template-columns:1fr 48px 1fr;align-items:c
 <script>
 const $=id=>document.getElementById(id);
 const API='https://api.dexscreener.com';
-let tokens=[],timer=null,sortMode='newest',showCrowns=false,seen=new Set(),chart=null,chartResize=null,chartPair=null;
+let tokens=[],timer=null,sortMode='newest',showCrowns=false,seen=new Set(),chart=null,chartResize=null;
 let settings={minMcap:20000,maxMcap:500000,minVol:25000,minLiq:10000,poll:60,browserAlerts:false};
 try{settings={...settings,...JSON.parse(localStorage.getItem('gemradar-settings')||'{}')}}catch{}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
@@ -60,7 +60,31 @@ function keyOf(p){return p.baseToken?.address||p.pairAddress}
 function baseline(p){const k=keyOf(p);if(!k)return null;const sk='gr-first-'+k;try{let old=JSON.parse(localStorage.getItem(sk)||'null');if(old&&old.mcap>0)return old;const m=metrics(p).mcap;if(m>0){const v={mcap:m,at:Date.now(),peak:m};localStorage.setItem(sk,JSON.stringify(v));return v}}catch{}return null}
 function perf(p){const b=baseline(p),m=metrics(p).mcap;if(!b||!b.mcap||!m)return {mult:null,peak:null};const current=m/b.mcap;const peak=Math.max(Number(b.peak)||b.mcap,m);if(peak>(Number(b.peak)||0)){try{localStorage.setItem('gr-first-'+keyOf(p),JSON.stringify({...b,peak}))}catch{}}return {mult:current,peak:peak/b.mcap}}
 function isCrown(p){const m=metrics(p);return m.mcap>=Number(settings.minMcap)&&m.mcap<=Number(settings.maxMcap)&&m.vol>=Number(settings.minVol)&&m.liq>=Number(settings.minLiq)}
-function spark(p){const c=metrics(p).change;return `<small style="display:block;color:${c>=0?'#27d6a0':'#ff596b'};font-size:10px;text-align:right;margin-top:3px">24h ${c>=0?'+':''}${c.toFixed(1)}%</small>`}
+const miniChartCache=new Map();
+function spark(p){const pair=esc(p.pairAddress||''),symbol=esc(p.baseToken?.symbol||'Token'),cached=miniChartCache.get(p.pairAddress);return `<button class="spark-button open-chart" data-pair="${pair}" data-token="${symbol}" aria-label="Open ${symbol} price chart" title="Open full price chart">${cached&&cached.expires>Date.now()?cached.svg:'<span aria-hidden="true">···</span>'}</button>`}
+function makeMiniSvg(rows){
+ const closes=rows.map(r=>Number(r[4])).filter(v=>Number.isFinite(v)&&v>0);
+ if(closes.length<2)return '';
+ const lo=Math.min(...closes),hi=Math.max(...closes),span=hi-lo||Math.max(hi*.001,1e-12);
+ const pts=closes.map((v,i)=>`${(i/(closes.length-1)*46).toFixed(1)},${(31-((v-lo)/span)*26).toFixed(1)}`).join(' ');
+ const rising=closes[closes.length-1]>=closes[0],stroke=rising?'#28d6a0':'#ff596b';
+ return `<svg class="spark" viewBox="0 0 46 36" preserveAspectRatio="none" role="img" aria-label="Real public 5-minute candle close prices"><polyline points="${pts}" fill="none" stroke="${stroke}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+}
+async function loadMiniCharts(list){
+ const candidates=list.filter(p=>p.pairAddress).slice(0,16);
+ for(const p of candidates){
+  const id=p.pairAddress,old=miniChartCache.get(id);
+  if(old&&old.expires>Date.now())continue;
+  try{
+   const r=await fetch('https://api.geckoterminal.com/api/v2/networks/solana/pools/'+encodeURIComponent(id)+'/ohlcv/minute?aggregate=5&limit=18',{headers:{accept:'application/json'},cache:'no-store'});
+   if(!r.ok)continue;
+   const j=await r.json(),rows=j.data?.attributes?.ohlcv_list||[],svg=makeMiniSvg(rows);
+   if(!svg)continue;
+   miniChartCache.set(id,{svg,expires:Date.now()+120000});
+   document.querySelectorAll('.spark-button[data-pair]').forEach(btn=>{if(btn.dataset.pair===id)btn.innerHTML=svg});
+  }catch{}
+ }
+}
 async function load(){
  $('message').innerHTML='<span class="status"><span class="dot"></span>Refreshing public data…</span>';
  try{
@@ -71,11 +95,11 @@ async function load(){
   const fresh=[...map.values()];fresh.forEach(p=>baseline(p));
   const newMatches=fresh.filter(p=>!seen.has(keyOf(p))&&isCrown(p));fresh.forEach(p=>seen.add(keyOf(p)));tokens=fresh;
   if(settings.browserAlerts&&newMatches.length&&'Notification'in window&&Notification.permission==='granted')newMatches.slice(0,3).forEach(p=>new Notification('♛ GemRadar alert: '+(p.baseToken?.symbol||'Token'),{body:`Mcap ${fmt(metrics(p).mcap)} · 24h volume ${fmt(metrics(p).vol)}`}));
-  const calls=tokens.map(p=>perf(p)).filter(x=>x.peak);const doubled=calls.filter(x=>x.peak>=2).length;const rate=calls.length?Math.round(doubled/calls.length*100):null;const top=calls.reduce((a,b)=>!a||b.peak>a.peak?b:a,null);
-  $('hotHours').textContent='—%';$('freeRate').textContent=rate===null?'—%':rate+'%';$('premiumRate').textContent='—%';$('topCall').textContent=top?top.peak.toFixed(1)+'x':'—x';$('topCallName').textContent=top?'Local peak':'Tracking locally';
-  $('message').innerHTML=`<span class="status"><span class="dot"></span>Live public data</span> · ${tokens.length} Solana pairs currently loaded. MCap may fall back to FDV. “1m Vol” is estimated from public 5-minute volume where available. Peak multiple is tracked only since this browser first observed the token.`;
+  const calls=tokens.map(p=>perf(p)).filter(x=>x.peak);const top=calls.reduce((a,b)=>!a||b.peak>a.peak?b:a,null);
+  $('hotHours').textContent='—%';$('freeRate').textContent='—%';$('premiumRate').textContent='—%';$('topCall').textContent=top?top.peak.toFixed(1)+'x':'—x';$('topCallName').textContent=top?'Local peak':'Tracking locally';
+  $('message').innerHTML=`<span class="status"><span class="dot"></span>Live public data</span> · ${tokens.length} Solana pairs currently loaded. MCap may fall back to FDV. “1m Vol” is estimated from public 5-minute volume where available. Tiny charts use public OHLCV candles and remain blank if no candles are returned. Peak multiple is tracked only since this browser first observed the token; verified Gembot call history is not available.`;
   render();
- }catch(e){$('message').innerHTML='<span style="color:#ff8996">Data unavailable:</span> '+esc(e.message)+'. No fake/sample market rows are shown.';if(!tokens.length)$('coinList').innerHTML='<div class="empty">Could not load live data. Check internet and tap Refresh.</div>'}
+ }catch(e){$('message').innerHTML='<span style="color:#ff8996">Data unavailable:</span> '+esc(e.message)+'. No fake/sample market rows are shown.';if(!tokens.length)$('coinList').innerHTML='<div class="empty">Could not load live data. Check internet and reload the page.</div>'}
 }
 function render(){
  let arr=tokens.filter(p=>!showCrowns||isCrown(p));
@@ -83,7 +107,8 @@ function render(){
  else if(sortMode==='trending')arr.sort((a,b)=>metrics(b).vol-metrics(a).vol);
  else arr.sort((a,b)=>metrics(b).created-metrics(a).created);
  if(!arr.length){$('coinList').innerHTML='<div class="empty">No matching tokens in the current public feed.</div>';return}
- $('coinList').innerHTML=arr.map(p=>{const m=metrics(p),t=p.baseToken||{},info=p.info||{},logo=info.imageUrl,perfData=perf(p),peak=perfData.peak,age=m.created?ago(Date.now()-m.created):'—',c=isCrown(p);return `<article class="coin"><div class="coin-main">${logo?`<img class="avatar" src="${esc(logo)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=&quot;avatar&quot;>◇</div>'">`:`<div class="avatar">${esc((t.symbol||'◇').slice(0,1))}</div>`}<div class="token-info"><button class="symbol open-chart" data-pair="${esc(p.pairAddress||'')}" data-token="${esc(t.symbol||'Token')}"><span>${esc(t.symbol||'UNKNOWN')}</span><span class="chain">≋</span></button><div class="token-meta"><span class="speaker">◖</span> ${age}${c?' · ♛':''}</div></div></div><div class="metric">${fmt(m.mcap)}<small>${m.mcap&&p.marketCap?'Mcap':'FDV'}</small></div><div class="metric">${fmt(m.vol1m)}<small>1m est.</small></div><div class="metric peak"><span><span class="crown">♛</span>${peak?peak.toFixed(1)+'x':'—'}</span>${spark(p)}<button class="open-chart" data-pair="${esc(p.pairAddress||'')}" data-token="${esc(t.symbol||'Token')}" style="display:none">Chart</button></div></article>`}).join('');
+ $('coinList').innerHTML=arr.map(p=>{const m=metrics(p),t=p.baseToken||{},info=p.info||{},logo=info.imageUrl,perfData=perf(p),peak=perfData.peak,age=m.created?ago(Date.now()-m.created):'—',c=isCrown(p);return `<article class="coin"><div class="coin-main">${logo?`<img class="avatar" src="${esc(logo)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=&quot;avatar&quot;>◇</div>'">`:`<div class="avatar">${esc((t.symbol||'◇').slice(0,1))}</div>`}<div class="token-info"><button class="symbol open-chart" data-pair="${esc(p.pairAddress||'')}" data-token="${esc(t.symbol||'Token')}"><span>${esc(t.symbol||'UNKNOWN')}</span><span class="chain">≋</span></button><div class="token-meta">${age}${c?' · ♛':''}</div></div></div><div class="metric">${fmt(m.mcap)}<small>${m.mcap&&p.marketCap?'Mcap':'FDV'}</small></div><div class="metric">${fmt(m.vol1m)}<small>1m est.</small></div><div class="metric peak"><span><span class="crown">♛</span>${peak?peak.toFixed(1)+'x':'—'}</span><small>Local peak</small></div>${spark(p)}</article>`}).join('');
+ loadMiniCharts(arr);
 }
 $('filters').querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{sortMode=b.dataset.sort;$('filters').querySelectorAll('[data-sort]').forEach(x=>x.classList.toggle('active',x===b));render()});
 $('alertsFilter').onclick=()=>{showCrowns=!showCrowns;$('alertsFilter').classList.toggle('active',showCrowns);render()};
@@ -98,11 +123,41 @@ $('resetSettings').onclick=()=>{settings={minMcap:20000,maxMcap:500000,minVol:25
 $('notifyBtn').onclick=async()=>{if(!('Notification'in window)){showMessage('Notifications are not supported in this browser.');return}const p=await Notification.requestPermission();if(p==='granted'){settings.browserAlerts=true;localStorage.setItem('gemradar-settings',JSON.stringify(settings));showMessage('Notifications enabled while this page is open. iOS may require adding the site to the Home Screen.')}else showMessage('Notifications were not enabled. Check Safari site permissions.')};
 $('signIn').onclick=()=>alert('Sign-in is not implemented in this free demo; no account or credentials are collected.');
 $('premiumBtn').onclick=()=>alert('Premium styling is a visual category only. No paid signals are claimed or sold.');
-let activeChart=null;
-async function openChart(pairAddress,symbol){$('chartModal').classList.add('open');$('chartTitle').textContent=symbol+' · Chart';$('chartSub').textContent='Loading public OHLCV data…';$('priceChart').innerHTML='';if(activeChart){activeChart.remove();activeChart=null}if(!window.LightweightCharts){$('chartSub').textContent='Chart library unavailable; check connection.';return}chartPair={pairAddress};const h=$('priceChart');activeChart=LightweightCharts.createChart(h,{width:h.clientWidth,height:310,layout:{background:{color:'#11141d'},textColor:'#9ea5b6'},grid:{vertLines:{color:'#252a36'},horzLines:{color:'#252a36'}},timeScale:{timeVisible:true,borderColor:'#333848'},rightPriceScale:{borderColor:'#333848'}});activeChart.__series=activeChart.addCandlestickSeries({upColor:'#28d6a0',downColor:'#ff596b',borderUpColor:'#28d6a0',borderDownColor:'#ff596b',wickUpColor:'#28d6a0',wickDownColor:'#ff596b'});window.onresize=()=>activeChart&&activeChart.applyOptions({width:h.clientWidth});await chartLoad('minute')}
-async function chartLoad(tf){if(!chartPair||!activeChart)return;$('chartControls').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.tf===tf));$('chartSub').textContent='Loading '+tf+' candles…';let interval=tf==='minute'?'minute?aggregate=1&limit=100':tf==='hour'?'hour?aggregate=1&limit=100':'day?aggregate=1&limit=100';try{const r=await fetch('https://api.geckoterminal.com/api/v2/networks/solana/pools/'+encodeURIComponent(chartPair.pairAddress)+'/ohlcv/'+interval,{headers:{accept:'application/json'}});if(!r.ok)throw Error('Public OHLCV API returned '+r.status);const j=await r.json(),rows=j.data?.attributes?.ohlcv_list||[];if(!rows.length)throw Error('No candles available for this pair');activeChart.__series.setData(rows.map(x=>({time:+x[0],open:+x[1],high:+x[2],low:+x[3],close:+x[4]})).sort((a,b)=>a.time-b.time));activeChart.timeScale().fitContent();$('chartSub').textContent='Live public GeckoTerminal OHLCV · '+rows.length+' candles';$('chartNote').textContent='If data is missing, this token may be too new or illiquid.'}catch(e){$('chartSub').textContent='Chart unavailable';$('chartNote').textContent=e.message}}
-$('coinList').addEventListener('click',e=>{const b=e.target.closest('.open-chart');if(b){const row=b.closest('.coin');const chartButton=row?.querySelector('button[data-pair]');openChart(b.dataset.pair,b.dataset.token)}});
-$('closeChart').onclick=()=>{$('chartModal').classList.remove('open');chartPair=null;if(activeChart){activeChart.remove();activeChart=null}};
+let activeChart=null,chartPair=null,chartRequestId=0,chartResizeObserver=null;
+async function openChart(pairAddress,symbol){
+ if(!pairAddress){showMessage('A public pool address is not available for this token yet.');return}
+ $('chartModal').classList.add('open');$('chartTitle').textContent=symbol+' · Chart';$('chartSub').textContent='Loading public OHLCV data…';$('chartNote').textContent='';$('priceChart').innerHTML='';
+ if(chartResizeObserver){chartResizeObserver.disconnect();chartResizeObserver=null}
+ if(activeChart){activeChart.remove();activeChart=null}
+ chartPair={pairAddress};chartRequestId++;
+ if(!window.LightweightCharts){$('chartSub').textContent='Chart library unavailable; check connection.';return}
+ const h=$('priceChart');
+ activeChart=LightweightCharts.createChart(h,{width:Math.max(280,h.clientWidth),height:300,layout:{background:{color:'#11141d'},textColor:'#9ea5b6'},grid:{vertLines:{color:'#252a36'},horzLines:{color:'#252a36'}},timeScale:{timeVisible:true,borderColor:'#333848'},rightPriceScale:{borderColor:'#333848'},localization:{priceFormatter:v=>v<0.0001?v.toExponential(2):v<1?v.toPrecision(4):v.toLocaleString(undefined,{maximumFractionDigits:4})}});
+ activeChart.__series=activeChart.addCandlestickSeries({upColor:'#28d6a0',downColor:'#ff596b',borderUpColor:'#28d6a0',borderDownColor:'#ff596b',wickUpColor:'#28d6a0',wickDownColor:'#ff596b'});
+ if('ResizeObserver'in window){chartResizeObserver=new ResizeObserver(entries=>{if(activeChart&&entries[0])activeChart.applyOptions({width:Math.max(280,Math.floor(entries[0].contentRect.width))})});chartResizeObserver.observe(h)}
+ await chartLoad('minute')
+}
+async function chartLoad(tf){
+ if(!chartPair||!activeChart)return;
+ const requestId=++chartRequestId,pairAddress=chartPair.pairAddress,chart=activeChart;
+ $('chartControls').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.tf===tf));
+ $('chartSub').textContent='Loading '+tf+' candles…';$('chartNote').textContent='';
+ const interval=tf==='minute'?'minute?aggregate=1&limit=100':tf==='hour'?'hour?aggregate=1&limit=100':'day?aggregate=1&limit=100';
+ try{
+  const r=await fetch('https://api.geckoterminal.com/api/v2/networks/solana/pools/'+encodeURIComponent(pairAddress)+'/ohlcv/'+interval,{headers:{accept:'application/json'},cache:'no-store'});
+  if(!r.ok)throw Error('Public OHLCV API returned '+r.status);
+  const j=await r.json(),rows=j.data?.attributes?.ohlcv_list||[];
+  if(requestId!==chartRequestId||chart!==activeChart||!chartPair||chartPair.pairAddress!==pairAddress)return;
+  if(!rows.length)throw Error('No candles available for this pair yet.');
+  const candles=rows.map(x=>({time:+x[0],open:+x[1],high:+x[2],low:+x[3],close:+x[4]})).filter(x=>[x.time,x.open,x.high,x.low,x.close].every(Number.isFinite)).sort((a,b)=>a.time-b.time);
+  if(!candles.length)throw Error('No valid candles returned by the public API.');
+  chart.__series.setData(candles);chart.timeScale().fitContent();
+  $('chartSub').textContent='Public GeckoTerminal OHLCV · '+candles.length+' candles';
+  $('chartNote').textContent='Candles depend on public pool history and may be unavailable for new or illiquid tokens.';
+ }catch(e){if(requestId===chartRequestId){$('chartSub').textContent='Chart unavailable';$('chartNote').textContent=e.message}}
+}
+$('coinList').addEventListener('click',e=>{const b=e.target.closest('.open-chart');if(b)openChart(b.dataset.pair,b.dataset.token)});
+$('closeChart').onclick=()=>{$('chartModal').classList.remove('open');chartPair=null;chartRequestId++;if(chartResizeObserver){chartResizeObserver.disconnect();chartResizeObserver=null}if(activeChart){activeChart.remove();activeChart=null}};
 $('chartModal').onclick=e=>{if(e.target===$('chartModal'))$('closeChart').click()};
 $('chartControls').querySelectorAll('button').forEach(b=>b.onclick=()=>chartLoad(b.dataset.tf));
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});

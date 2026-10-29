@@ -45,4 +45,13 @@ No API key is required for the current DexScreener endpoints. Public APIs may ra
 
 
 ## Dashboard UI update
-The mobile dashboard now uses a compact dark feed layout inspired by the supplied reference: summary tiles, Newest/Heaters/Trending filters, token/Mcap/1m volume/Peak columns, crown-style rule matches, local peak tracking, browser notifications while open, and an in-app OHLCV chart. It uses public DexScreener and GeckoTerminal endpoints. The compact trend indicator displays the actual public 24h price change rather than a fabricated sparkline. “Since first seen” peak tracking is local to the browser and is not an official callout price. Sign-in and paid Premium are visual-only and do not collect credentials or charge money.
+The mobile dashboard now uses a compact dark feed layout inspired by the supplied reference: summary tiles, Newest/Heaters/Trending filters, token/Mcap/1m volume/Peak columns, crown-style rule matches, local peak tracking, browser notifications while open, and an in-app OHLCV chart. It uses public DexScreener and GeckoTerminal endpoints. The sparkline is a decorative deterministic guide, not real historical data; the app labels the feed limitations. “Since first seen” peak tracking is local to the browser and is not an official callout price. Sign-in and paid Premium are visual-only and do not collect credentials or charge money.
+
+
+## Mobile layout and chart behavior (updated)
+
+- The mobile feed uses five non-overlapping columns: Token, Mcap, 1m Vol, Peak, and a compact chart.
+- The compact chart is drawn only from public GeckoTerminal OHLCV candle closes. If public candles are missing or rate-limited, the mini chart stays blank rather than inventing a trend.
+- Tapping a token name or its mini chart opens the built-in candlestick chart in the site; it does not redirect to DexScreener. Timeframes are 1m, 1h, and 1d.
+- Free/Premium hit-rate percentages remain `—%` because this project does not have a verified historical Gembot callout feed. Local peak tracking starts only after the browser first observes a token.
+- Market data is fetched from public APIs; public APIs may rate-limit or have incomplete history, especially for new pools.
